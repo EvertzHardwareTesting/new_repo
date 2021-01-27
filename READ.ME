@@ -1,0 +1,35 @@
+=================== How to Run Scripts from CMD ===================================:
+
+Case 1:
+
+Step1: Open CMD from Testcase folder location
+Step2: robot .
+
+Case 2:
+
+if you want to pass any runtime argument use "-v"
+
+example1:   robot -v display:Display2 -v templateName:@1234 .
+
+example2:   robot -v DeviceIP:172.17.174.12 -v Display:Display3 -v TemplateName:@12345 -d "E:/EMDmachine251/Reports" -i ModifiedTemplate .
+
+robot -v DeviceIP:172.17.174.12 -v Display:Display3 -d "E:/EMDmachine251/Reports" -i Grid .
+robot -v Display:Display3 -d "E:/EMDmachine251/Reports" .
+
+if you want to execute specific testcases use below command:
+
+robot -v variableName:variableValue -i TagName .
+
+eg: robot -v display:Display4 -i Audiobar .
+
+
+=================================== INI file =======================================
+Images names access from .ini file is
+
+[HomeWindow]
+4:3 Widget                                      = 43Widget.png
+4:3 Widget Input1                               = 43WidgetInput1.png
+AddButton                                       = AddButton.png
+
+in your robot scripts  you can call variables like this:    ${4:3 widget}   you will get result as :  43Widget.png
+

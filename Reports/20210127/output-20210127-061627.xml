@@ -1,0 +1,2220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210127 06:16:28.214" rpa="false">
+<suite id="s1" name="EMDmachine251" source="E:\EMDmachine251">
+<suite id="s1-s1" name="TestCases" source="E:\EMDmachine251\TestCases">
+<kw name="Launch Application" library="coreKeywords" type="setup">
+<doc>This keyword starts the Sikuli Process and Open Application</doc>
+<kw name="Initiate Sikuli Server" library="coreKeywords">
+<doc>Starting Sikuli Library and initiating image path and capture folder for Sikuli Library</doc>
+<arguments>
+<arg>${ImageLocationPath}</arg>
+<arg>${CaptureLocationPath}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Stop Remote Server</arg>
+</arguments>
+<assign>
+<var>${ServerStatus}</var>
+</assign>
+<kw name="Stop Remote Server" library="SikuliLibrary">
+<doc>Stops the remote server.</doc>
+<msg timestamp="20210127 06:16:28.464" level="FAIL">AttributeError: 'NoneType' object has no attribute 'run_keyword'</msg>
+<status status="FAIL" starttime="20210127 06:16:28.464" endtime="20210127 06:16:28.464"></status>
+</kw>
+<msg timestamp="20210127 06:16:28.464" level="INFO">${ServerStatus} = ('FAIL', "AttributeError: 'NoneType' object has no attribute 'run_keyword'")</msg>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:28.464"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${ServerStatus}[0]" == "FAIL"</arg>
+<arg>Log</arg>
+<arg>No Instance of Sikuli Process is avaliable; user need to start one</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>No Instance of Sikuli Process is avaliable; user need to start one</arg>
+</arguments>
+<msg timestamp="20210127 06:16:28.464" level="INFO">No Instance of Sikuli Process is avaliable; user need to start one</msg>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:28.464"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:28.464"></status>
+</kw>
+<kw name="Start Sikuli Process" library="SikuliLibrary">
+<msg timestamp="20210127 06:16:28.464" level="INFO">Starting process:
+java -jar c:\python38-32\lib\site-packages\SikuliLibrary\lib\SikuliLibrary.jar 59637 E:\EMDmachine251\Reports\20210127</msg>
+<msg timestamp="20210127 06:16:28.480" level="INFO">Start sikuli java process on port 59637</msg>
+<msg timestamp="20210127 06:16:29.029" level="INFO">Sikuli java process is started</msg>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:30.589"></status>
+</kw>
+<kw name="Set Slow Motion Delay" library="SikuliLibrary">
+<doc>Set slow motion delay
+ Control the duration of the visual effect (seconds).</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210127 06:16:30.604" level="INFO">Params: [5]</msg>
+<status status="PASS" starttime="20210127 06:16:30.604" endtime="20210127 06:16:30.604"></status>
+</kw>
+<kw name="Add Image Path" library="SikuliLibrary">
+<doc>Add image path</doc>
+<arguments>
+<arg>${ImageLocation}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:30.620" level="INFO">Params: [E:\EMDmachine251\Utilities/../Images]</msg>
+<status status="PASS" starttime="20210127 06:16:30.604" endtime="20210127 06:16:30.620"></status>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<doc>Set captured folder</doc>
+<arguments>
+<arg>${CaptureLocation}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:30.620" level="INFO">Params: [E:\EMDmachine251\Utilities/../Reports]</msg>
+<status status="PASS" starttime="20210127 06:16:30.620" endtime="20210127 06:16:30.620"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Screenshot">
+<doc>Sets the directory where screenshots are saved.</doc>
+<arguments>
+<arg>${ImageLocation}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 06:16:30.620" endtime="20210127 06:16:30.620"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:30.620"></status>
+</kw>
+<kw name="Open New Application" library="coreKeywords">
+<doc>Allow user to open new application for a given path and application titile.</doc>
+<arguments>
+<arg>${ApplicationPath}</arg>
+<arg>${ApplicationTittle}</arg>
+</arguments>
+<kw name="Open Application" library="SikuliLibrary">
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<arguments>
+<arg>${ApplicationPath}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:31.798" level="INFO">Params: [E:\EMDmachine251\Utilities/../Evertz Multiviewer Designer.lnk]</msg>
+<status status="PASS" starttime="20210127 06:16:30.620" endtime="20210127 06:16:31.798"></status>
+</kw>
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>${ApplicationTittle}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 06:16:31.798" endtime="20210127 06:16:32.344"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Wait For Active Window</arg>
+<arg>${ApplicationTittle}</arg>
+<arg>${EMPTY}</arg>
+<arg>${timeOut}</arg>
+</arguments>
+<assign>
+<var>${isDeviceActive}</var>
+</assign>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional
+_WindowText_ to appear. Force this to be the active window after it appears.  Optionally do a
+full screen capture on failure.</doc>
+<arguments>
+<arg>${ApplicationTittle}</arg>
+<arg>${EMPTY}</arg>
+<arg>${timeOut}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:32.891" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Evertz Multiviewer Designer', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20210127 06:16:32.891" level="INFO">AutoItLibrary.WinWait(WindowTitle='Evertz Multiviewer Designer', WindowText='', TimeOut=10)</msg>
+<msg timestamp="20210127 06:16:32.891" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Evertz Multiviewer Designer', WindowText='', TimeOut=10)</msg>
+<status status="PASS" starttime="20210127 06:16:32.344" endtime="20210127 06:16:32.891"></status>
+</kw>
+<msg timestamp="20210127 06:16:32.891" level="INFO">${isDeviceActive} = ('PASS', None)</msg>
+<status status="PASS" starttime="20210127 06:16:32.344" endtime="20210127 06:16:32.891"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${isDeviceActive}[0]"=="FAIL"</arg>
+<arg>Critical Step</arg>
+<arg>Cant Open Application : ${ApplicationTittle}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 06:16:32.891" endtime="20210127 06:16:32.891"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:30.620" endtime="20210127 06:16:32.891"></status>
+</kw>
+<kw name="Add Device" library="Keywords">
+<doc>Allow user to add device using device IP address and Device Name</doc>
+<arguments>
+<arg>${DeviceName}</arg>
+<arg>${DeviceIP}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Previous Added Device}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<assign>
+<var>${ScreenStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Previous Added Device}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:33.203" level="INFO">Params: [PreviousAddedDevice.png, 5]</msg>
+<msg timestamp="20210127 06:16:33.203" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746193187.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:32.891" endtime="20210127 06:16:33.203"></status>
+</kw>
+<msg timestamp="20210127 06:16:33.203" level="INFO">${ScreenStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:32.891" endtime="20210127 06:16:33.203"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ScreenStatus}</arg>
+<arg>Remove Old Device</arg>
+</arguments>
+<kw name="Remove Old Device" library="Keywords">
+<doc>By Using this Keyword User can Remove the existing device</doc>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${Close Mark}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:33.593" level="INFO">Params: [CloseMark.png, 15]</msg>
+<msg timestamp="20210127 06:16:33.593" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746193593.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:33.203" endtime="20210127 06:16:33.593"></status>
+</kw>
+<msg timestamp="20210127 06:16:33.593" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:33.203" endtime="20210127 06:16:33.593"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:34.583" level="INFO">Params: [CloseMark.png]</msg>
+<msg timestamp="20210127 06:16:34.583" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746193827.png'/&gt;
+[log] CLICK on L[1114,301]@S(0) (519 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:33.593" endtime="20210127 06:16:34.584"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:33.593" endtime="20210127 06:16:34.584"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:33.203" endtime="20210127 06:16:34.584"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Cancel Ok PopUp}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${Screenval}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Cancel Ok PopUp}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:34.869" level="INFO">Params: [CancelOkPopUp.png, 15]</msg>
+<msg timestamp="20210127 06:16:34.869" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746194869.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:34.585" endtime="20210127 06:16:34.869"></status>
+</kw>
+<msg timestamp="20210127 06:16:34.869" level="INFO">${Screenval} = True</msg>
+<status status="PASS" starttime="20210127 06:16:34.585" endtime="20210127 06:16:34.869"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Screenval}</arg>
+<arg>Emd Click</arg>
+<arg>${Ok Button}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${Ok Button}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:35.121" level="INFO">Params: [OkButton.png, 15]</msg>
+<msg timestamp="20210127 06:16:35.121" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746195089.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:34.885" endtime="20210127 06:16:35.121"></status>
+</kw>
+<msg timestamp="20210127 06:16:35.121" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:34.885" endtime="20210127 06:16:35.121"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:36.128" level="INFO">Params: [OkButton.png]</msg>
+<msg timestamp="20210127 06:16:36.128" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746195370.png'/&gt;
+[log] CLICK on L[1024,550]@S(0) (539 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:35.121" endtime="20210127 06:16:36.128"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:35.121" endtime="20210127 06:16:36.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:34.885" endtime="20210127 06:16:36.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:34.869" endtime="20210127 06:16:36.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:33.203" endtime="20210127 06:16:36.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:33.203" endtime="20210127 06:16:36.130"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>Name</arg>
+<arg>${DeviceName}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:16:36.371" level="INFO">Params: [Name, right, 1]
+[log] Get extended region from image result: [I@7899ce91</msg>
+<msg timestamp="20210127 06:16:36.371" level="INFO">${RequiredPosition} = [752, 179, 103, 32]</msg>
+<status status="PASS" starttime="20210127 06:16:36.130" endtime="20210127 06:16:36.372"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:37.645" level="INFO">Params: [[Ljava.lang.Object;@460c4f53]
+[log] DOUBLE CLICK on L[803,195]@S(0) (1270 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:36.372" endtime="20210127 06:16:37.645"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:16:37.702" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:16:37.645" endtime="20210127 06:16:37.702"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:40.400" level="INFO">Params: [SMPTE2022-6]
+Input Text:
+SMPTE2022-6
+[log]  TYPE "SMPTE2022-6"</msg>
+<status status="PASS" starttime="20210127 06:16:37.702" endtime="20210127 06:16:40.400"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:16:40.462" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:16:40.400" endtime="20210127 06:16:40.462"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:36.130" endtime="20210127 06:16:40.462"></status>
+</kw>
+<kw name="Emd Input Text" library="coreKeywords">
+<doc>It Waits for a text field is visible within the given time limit, then it enters text.</doc>
+<arguments>
+<arg>${IpInput}</arg>
+<arg>${DeviceIP}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${InputTextFieldImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${inputStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${InputTextFieldImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:40.728" level="INFO">Params: [IpInput.png, 15]</msg>
+<msg timestamp="20210127 06:16:40.728" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746200727.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:40.462" endtime="20210127 06:16:40.728"></status>
+</kw>
+<msg timestamp="20210127 06:16:40.728" level="INFO">${inputStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:40.462" endtime="20210127 06:16:40.728"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Run Keyword If</arg>
+<arg>${InputStatus}</arg>
+<arg>Input Text</arg>
+<arg>${InputTextFieldImage}</arg>
+<arg>${InputText}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${InputStatus}</arg>
+<arg>Input Text</arg>
+<arg>${InputTextFieldImage}</arg>
+<arg>${InputText}</arg>
+</arguments>
+<kw name="Input Text" library="SikuliLibrary">
+<doc>Input text
+ Image could be empty</doc>
+<arguments>
+<arg>${InputTextFieldImage}</arg>
+<arg>${InputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:42.965" level="INFO">Params: [IpInput.png, 172.17.174.12]
+Input Text:
+172.17.174.12</msg>
+<msg timestamp="20210127 06:16:42.965" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746201494.png'/&gt;
+[log] CLICK on L[1020,193]@S(0) (524 msec)
+[log]  TYPE "172.17.174.12"</msg>
+<status status="PASS" starttime="20210127 06:16:40.728" endtime="20210127 06:16:42.965"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:40.728" endtime="20210127 06:16:42.965"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:40.728" endtime="20210127 06:16:42.965"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:40.462" endtime="20210127 06:16:42.965"></status>
+</kw>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${Add Button}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:43.215" level="INFO">Params: [AddButton.png, 15]</msg>
+<msg timestamp="20210127 06:16:43.215" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746203215.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:42.965" endtime="20210127 06:16:43.215"></status>
+</kw>
+<msg timestamp="20210127 06:16:43.215" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:42.965" endtime="20210127 06:16:43.215"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:44.549" level="INFO">Params: [AddButton.png]</msg>
+<msg timestamp="20210127 06:16:44.549" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746203466.png'/&gt;
+[log] CLICK on L[1181,194]@S(0) (801 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:43.215" endtime="20210127 06:16:44.549"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:43.215" endtime="20210127 06:16:44.549"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:42.965" endtime="20210127 06:16:44.550"></status>
+</kw>
+<kw name="Unable To Connect Retry" library="Keywords">
+<doc>This keyword verifies page is having click to retry</doc>
+<kw name="${i} IN RANGE [ 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Successful Connected Display List}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<assign>
+<var>${Status}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Successful Connected Display List}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:45.139" level="INFO">Params: [SuccessfulConnectedDisplayList.png, 5]</msg>
+<msg timestamp="20210127 06:16:45.139" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746205138.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:44.551" endtime="20210127 06:16:45.139"></status>
+</kw>
+<msg timestamp="20210127 06:16:45.139" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20210127 06:16:44.551" endtime="20210127 06:16:45.139"></status>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${Status}</arg>
+<arg>EXIT FOR LOOP</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210127 06:16:45.139" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210127 06:16:45.139" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.139" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:44.551" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:44.550" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:44.550" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:32.891" endtime="20210127 06:16:45.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:28.464" endtime="20210127 06:16:45.139"></status>
+</kw>
+<suite id="s1-s1-s1" name="Poc Demo" source="E:\EMDmachine251\TestCases\Poc Demo.robot">
+<test id="s1-s1-s1-t1" name="TC02: Audio Bar-Show Meter Displaying on the Output">
+<kw name="Set Test Message" library="Keywords">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${PassMessge}</arg>
+<arg>${TEST NAME} Passed</arg>
+</arguments>
+<msg timestamp="20210127 06:16:45.170" level="INFO">${PassMessge} = TC02: Audio Bar-Show Meter Displaying on the Output Passed</msg>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:45.170"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${FailedMessge}</arg>
+<arg>${TEST NAME} Failed</arg>
+</arguments>
+<msg timestamp="20210127 06:16:45.170" level="INFO">${FailedMessge} = TC02: Audio Bar-Show Meter Displaying on the Output Failed</msg>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:45.170"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:45.170"></status>
+</kw>
+<kw name="Go To Display And Clear Layout" library="Keywords">
+<kw name="Go To Multiviewer Display" library="Keywords">
+<doc>Based on Input it will select Display</doc>
+<arguments>
+<arg>${Display}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${Display}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:45.451" level="INFO">Params: [Display4, 15]</msg>
+<msg timestamp="20210127 06:16:45.451" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746205450.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:45.451"></status>
+</kw>
+<msg timestamp="20210127 06:16:45.451" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:45.451"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:47.400" level="INFO">Params: [Display4]</msg>
+<msg timestamp="20210127 06:16:47.400" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746205700.png'/&gt;
+[log] CLICK on L[1086,401]@S(0) (1464 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:45.451" endtime="20210127 06:16:47.400"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.451" endtime="20210127 06:16:47.401"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:47.401"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:16:47.401"></status>
+</kw>
+<kw name="Clear Layout Display" library="Keywords">
+<doc>It clears the Multiviewer window</doc>
+<kw name="Go To Section" library="Keywords">
+<doc>It Selects The Widgets Section</doc>
+<arguments>
+<arg>${Layouts}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:48.014" level="INFO">Params: [Layouts.png, 15]</msg>
+<msg timestamp="20210127 06:16:48.014" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746208012.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:47.404" endtime="20210127 06:16:48.015"></status>
+</kw>
+<msg timestamp="20210127 06:16:48.015" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:47.403" endtime="20210127 06:16:48.015"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:56.155" level="INFO">Params: [Layouts.png]</msg>
+<msg timestamp="20210127 06:16:56.155" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746215239.png'/&gt;
+[log] CLICK on L[1717,116]@S(0) (680 msec)</msg>
+<status status="PASS" starttime="20210127 06:16:48.016" endtime="20210127 06:16:56.155"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:48.016" endtime="20210127 06:16:56.155"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:47.403" endtime="20210127 06:16:56.156"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:47.402" endtime="20210127 06:16:56.156"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${NoLayout}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${NoLayoutStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${NoLayout}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:16:57.420" level="INFO">Params: [NoLayout.png, 15]</msg>
+<msg timestamp="20210127 06:16:57.420" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746217420.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:56.157" endtime="20210127 06:16:57.420"></status>
+</kw>
+<msg timestamp="20210127 06:16:57.420" level="INFO">${NoLayoutStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:16:56.156" endtime="20210127 06:16:57.420"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${NoLayoutStatus}</arg>
+<arg>Drag And Drop By Offset</arg>
+<arg>${NoLayout}</arg>
+<arg>-890</arg>
+<arg>350</arg>
+</arguments>
+<kw name="Drag And Drop By Offset" library="SikuliLibrary">
+<doc>Drag the source image to target by offset.
+If source image is empty, drag the last match and drop at given target</doc>
+<arguments>
+<arg>${NoLayout}</arg>
+<arg>-890</arg>
+<arg>350</arg>
+</arguments>
+<msg timestamp="20210127 06:17:00.162" level="INFO">Params: [NoLayout.png, -890, 350]</msg>
+<msg timestamp="20210127 06:17:00.162" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746217623.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:16:57.420" endtime="20210127 06:17:00.162"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:57.420" endtime="20210127 06:17:00.162"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Clear MultiViewer Window}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${ClearMultiViewerWindowStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Clear MultiViewer Window}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:00.737" level="INFO">Params: [ClearMultiViewerWindow.png, 15]</msg>
+<msg timestamp="20210127 06:17:00.737" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746220669.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:00.162" endtime="20210127 06:17:00.737"></status>
+</kw>
+<msg timestamp="20210127 06:17:00.737" level="INFO">${ClearMultiViewerWindowStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:00.162" endtime="20210127 06:17:00.737"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${ClearMultiViewerWindowStatus}</arg>
+<arg>Drag And Drop By Offset</arg>
+<arg>${NoLayout}</arg>
+<arg>-890</arg>
+<arg>350</arg>
+</arguments>
+<status status="PASS" starttime="20210127 06:17:00.738" endtime="20210127 06:17:00.738"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:47.401" endtime="20210127 06:17:00.738"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:16:45.170" endtime="20210127 06:17:00.739"></status>
+</kw>
+<kw name="Go To Section Drag And Drop Wait Until It Loads On Display" library="Keywords">
+<doc>Select the section and darg and drop specific Widget and wait until its loaded on Display</doc>
+<arguments>
+<arg>Widgets</arg>
+<arg>43Widget</arg>
+<arg>Window Type Video</arg>
+<arg>@{4:3position}</arg>
+</arguments>
+<kw name="Go To Section" library="Keywords">
+<doc>It Selects The Widgets Section</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:00.994" level="INFO">Params: [Widgets, 15]</msg>
+<msg timestamp="20210127 06:17:00.994" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746220993.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:00.741" endtime="20210127 06:17:00.994"></status>
+</kw>
+<msg timestamp="20210127 06:17:00.994" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:00.741" endtime="20210127 06:17:00.994"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:02.436" level="INFO">Params: [Widgets]</msg>
+<msg timestamp="20210127 06:17:02.436" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746221322.png'/&gt;
+[log] CLICK on L[1559,112]@S(0) (895 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:00.994" endtime="20210127 06:17:02.436"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:00.994" endtime="20210127 06:17:02.436"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:00.740" endtime="20210127 06:17:02.437"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:00.740" endtime="20210127 06:17:02.437"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SikuliLibrary">
+<doc>Drag the source image to target by offset.
+If source image is empty, drag the last match and drop at given target</doc>
+<arguments>
+<arg>${Item}</arg>
+<arg>${Offsetvalues}[0]</arg>
+<arg>${Offsetvalues}[1]</arg>
+</arguments>
+<msg timestamp="20210127 06:17:05.318" level="INFO">Params: [43Widget, -900, 100]</msg>
+<msg timestamp="20210127 06:17:05.318" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746223154.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:02.437" endtime="20210127 06:17:05.318"></status>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${WindowTypeLabelImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:05.625" level="INFO">Params: [Window Type Video, 15]</msg>
+<msg timestamp="20210127 06:17:05.625" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746225620.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:05.318" endtime="20210127 06:17:05.625"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:00.739" endtime="20210127 06:17:05.626"></status>
+</kw>
+<kw name="Set Position Of Widget" library="Keywords">
+<doc>Based on user inputs it will set the position of widget on Display.</doc>
+<arguments>
+<arg>764</arg>
+<arg>112</arg>
+</arguments>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Dimensions}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:06.137" level="INFO">Params: [Dimensions.png, 15]</msg>
+<msg timestamp="20210127 06:17:06.137" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746226137.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:05.627" endtime="20210127 06:17:06.137"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${Position X}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:06.903" level="INFO">Params: [PositionX.png]</msg>
+<msg timestamp="20210127 06:17:06.903" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746226402.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:06.137" endtime="20210127 06:17:06.903"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position X}</arg>
+<arg>${xOffset}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:07.140" level="INFO">Params: [PositionX.png, right, 1]
+[log] Get extended region from image result: [I@79de4e13</msg>
+<msg timestamp="20210127 06:17:07.140" level="INFO">${RequiredPosition} = [1716, 652, 52, 20]</msg>
+<status status="PASS" starttime="20210127 06:17:06.904" endtime="20210127 06:17:07.140"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:08.157" level="INFO">Params: [[Ljava.lang.Object;@441b4c92]
+[log] DOUBLE CLICK on L[1742,662]@S(0) (1017 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:07.140" endtime="20210127 06:17:08.157"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:08.199" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:08.157" endtime="20210127 06:17:08.200"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:08.322" level="INFO">Params: [764]
+Input Text:
+764
+[log]  TYPE "764"</msg>
+<status status="PASS" starttime="20210127 06:17:08.200" endtime="20210127 06:17:08.323"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:08.365" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:08.323" endtime="20210127 06:17:08.366"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:06.903" endtime="20210127 06:17:08.366"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${Position Y}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:09.376" level="INFO">Params: [PositionY.png]</msg>
+<msg timestamp="20210127 06:17:09.376" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746228870.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:08.366" endtime="20210127 06:17:09.376"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position Y}</arg>
+<arg>${yOffset}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:09.590" level="INFO">Params: [PositionY.png, right, 1]
+[log] Get extended region from image result: [I@6a8f431b</msg>
+<msg timestamp="20210127 06:17:09.590" level="INFO">${RequiredPosition} = [1820, 652, 26, 21]</msg>
+<status status="PASS" starttime="20210127 06:17:09.376" endtime="20210127 06:17:09.590"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:10.124" level="INFO">Params: [[Ljava.lang.Object;@72966f5f]
+[log] DOUBLE CLICK on L[1833,662]@S(0) (534 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:09.590" endtime="20210127 06:17:10.124"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:10.166" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:10.124" endtime="20210127 06:17:10.167"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:10.383" level="INFO">Params: [112]
+Input Text:
+112
+[log]  TYPE "112"</msg>
+<status status="PASS" starttime="20210127 06:17:10.167" endtime="20210127 06:17:10.383"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:10.445" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:10.383" endtime="20210127 06:17:10.445"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:09.376" endtime="20210127 06:17:10.445"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:15.448" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210127 06:17:10.445" endtime="20210127 06:17:15.448"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:05.626" endtime="20210127 06:17:15.448"></status>
+</kw>
+<kw name="Go To Section Drag And Drop" library="Keywords">
+<doc>Select the section and darg and drop specific item</doc>
+<arguments>
+<arg>${Sources}</arg>
+<arg>${Input-1}</arg>
+<arg>@{4:3positionInput}</arg>
+</arguments>
+<kw name="Go To Section" library="Keywords">
+<doc>It Selects The Widgets Section</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:15.682" level="INFO">Params: [Sources.png, 15]</msg>
+<msg timestamp="20210127 06:17:15.682" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746235666.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:15.448" endtime="20210127 06:17:15.682"></status>
+</kw>
+<msg timestamp="20210127 06:17:15.682" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:15.448" endtime="20210127 06:17:15.682"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:16.872" level="INFO">Params: [Sources.png]</msg>
+<msg timestamp="20210127 06:17:16.872" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746235933.png'/&gt;
+[log] CLICK on L[1793,115]@S(0) (720 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:15.682" endtime="20210127 06:17:16.872"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:15.682" endtime="20210127 06:17:16.872"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:15.448" endtime="20210127 06:17:16.873"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:15.448" endtime="20210127 06:17:16.873"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SikuliLibrary">
+<doc>Drag the source image to target by offset.
+If source image is empty, drag the last match and drop at given target</doc>
+<arguments>
+<arg>${Item}</arg>
+<arg>${Offsetvalues}[0]</arg>
+<arg>${Offsetvalues}[1]</arg>
+</arguments>
+<msg timestamp="20210127 06:17:19.675" level="INFO">Params: [Input-1.png, -850, 100]</msg>
+<msg timestamp="20210127 06:17:19.675" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746237200.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:16.873" endtime="20210127 06:17:19.675"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:15.448" endtime="20210127 06:17:19.676"></status>
+</kw>
+<kw name="Go To Section Drag And Drop Wait Until It Loads On Display" library="Keywords">
+<doc>Select the section and darg and drop specific Widget and wait until its loaded on Display</doc>
+<arguments>
+<arg>${Widgets}</arg>
+<arg>${Audiobar Widget}</arg>
+<arg>${WindowType Audiobar}</arg>
+<arg>@{Audiobarposition}</arg>
+</arguments>
+<kw name="Go To Section" library="Keywords">
+<doc>It Selects The Widgets Section</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${SectionName}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:20.101" level="INFO">Params: [Widgets.png, 15]</msg>
+<msg timestamp="20210127 06:17:20.101" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746240100.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:19.679" endtime="20210127 06:17:20.101"></status>
+</kw>
+<msg timestamp="20210127 06:17:20.101" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:19.678" endtime="20210127 06:17:20.101"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:21.082" level="INFO">Params: [Widgets.png]</msg>
+<msg timestamp="20210127 06:17:21.082" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746240321.png'/&gt;
+[log] CLICK on L[1559,112]@S(0) (526 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:20.101" endtime="20210127 06:17:21.082"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:20.101" endtime="20210127 06:17:21.082"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:19.677" endtime="20210127 06:17:21.083"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:19.677" endtime="20210127 06:17:21.083"></status>
+</kw>
+<kw name="Drag And Drop By Offset" library="SikuliLibrary">
+<doc>Drag the source image to target by offset.
+If source image is empty, drag the last match and drop at given target</doc>
+<arguments>
+<arg>${Item}</arg>
+<arg>${Offsetvalues}[0]</arg>
+<arg>${Offsetvalues}[1]</arg>
+</arguments>
+<msg timestamp="20210127 06:17:23.871" level="INFO">Params: [AudiobarWidget.png, -1150, 250]</msg>
+<msg timestamp="20210127 06:17:23.871" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746241368.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:21.083" endtime="20210127 06:17:23.871"></status>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${WindowTypeLabelImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:24.171" level="INFO">Params: [WindowTypeAudioBar.png, 15]</msg>
+<msg timestamp="20210127 06:17:24.172" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746244168.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:23.871" endtime="20210127 06:17:24.172"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:19.676" endtime="20210127 06:17:24.172"></status>
+</kw>
+<kw name="Set Dimensition Of Widget" library="Keywords">
+<doc>Based on user inputs it will set the size of the Widget.</doc>
+<arguments>
+<arg>900</arg>
+<arg>300</arg>
+</arguments>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Dimensions}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:25.255" level="INFO">Params: [Dimensions.png, 15]</msg>
+<msg timestamp="20210127 06:17:25.255" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746245254.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:24.174" endtime="20210127 06:17:25.255"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position W}</arg>
+<arg>${widthVal}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:26.253" level="INFO">Params: [PositionW.png, right, 1]
+[log] Get extended region from image result: [I@57e4c67a</msg>
+<msg timestamp="20210127 06:17:26.253" level="INFO">${RequiredPosition} = [1713, 617, 28, 20]</msg>
+<status status="PASS" starttime="20210127 06:17:25.255" endtime="20210127 06:17:26.253"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:26.920" level="INFO">Params: [[Ljava.lang.Object;@19a74a6e]
+[log] DOUBLE CLICK on L[1727,627]@S(0) (665 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:26.253" endtime="20210127 06:17:26.920"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:26.962" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:26.920" endtime="20210127 06:17:26.963"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:27.085" level="INFO">Params: [900]
+Input Text:
+900
+[log]  TYPE "900"</msg>
+<status status="PASS" starttime="20210127 06:17:26.963" endtime="20210127 06:17:27.086"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:27.128" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:27.086" endtime="20210127 06:17:27.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:25.255" endtime="20210127 06:17:27.129"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position H}</arg>
+<arg>${heightVal}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:27.346" level="INFO">Params: [PositionH.png, right, 1]
+[log] Get extended region from image result: [I@1d59a56c</msg>
+<msg timestamp="20210127 06:17:27.346" level="INFO">${RequiredPosition} = [1818, 615, 33, 23]</msg>
+<status status="PASS" starttime="20210127 06:17:27.130" endtime="20210127 06:17:27.346"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:28.485" level="INFO">Params: [[Ljava.lang.Object;@7e6a1ff]
+[log] DOUBLE CLICK on L[1834,626]@S(0) (1136 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:27.346" endtime="20210127 06:17:28.485"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:28.527" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:28.485" endtime="20210127 06:17:28.528"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:28.673" level="INFO">Params: [300]
+Input Text:
+300
+[log]  TYPE "300"</msg>
+<status status="PASS" starttime="20210127 06:17:28.528" endtime="20210127 06:17:28.674"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:29.446" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:28.674" endtime="20210127 06:17:29.446"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:27.129" endtime="20210127 06:17:29.446"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:24.173" endtime="20210127 06:17:29.446"></status>
+</kw>
+<kw name="Set Position Of Widget" library="Keywords">
+<doc>Based on user inputs it will set the position of widget on Display.</doc>
+<arguments>
+<arg>460</arg>
+<arg>492</arg>
+</arguments>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Dimensions}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:29.771" level="INFO">Params: [Dimensions.png, 15]</msg>
+<msg timestamp="20210127 06:17:29.771" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746249768.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:29.447" endtime="20210127 06:17:29.771"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${Position X}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:31.281" level="INFO">Params: [PositionX.png]</msg>
+<msg timestamp="20210127 06:17:31.281" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746250380.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:29.771" endtime="20210127 06:17:31.282"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position X}</arg>
+<arg>${xOffset}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:31.525" level="INFO">Params: [PositionX.png, right, 1]
+[log] Get extended region from image result: [I@15febcc6</msg>
+<msg timestamp="20210127 06:17:31.525" level="INFO">${RequiredPosition} = [1716, 652, 52, 20]</msg>
+<status status="PASS" starttime="20210127 06:17:31.283" endtime="20210127 06:17:31.525"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:32.194" level="INFO">Params: [[Ljava.lang.Object;@100e10a9]
+[log] DOUBLE CLICK on L[1742,662]@S(0) (668 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:31.525" endtime="20210127 06:17:32.194"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:32.236" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:32.194" endtime="20210127 06:17:32.237"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:32.360" level="INFO">Params: [460]
+Input Text:
+460
+[log]  TYPE "460"</msg>
+<status status="PASS" starttime="20210127 06:17:32.237" endtime="20210127 06:17:32.360"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:32.402" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:32.360" endtime="20210127 06:17:32.403"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:31.282" endtime="20210127 06:17:32.403"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${Position Y}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:33.467" level="INFO">Params: [PositionY.png]</msg>
+<msg timestamp="20210127 06:17:33.467" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746252793.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:32.403" endtime="20210127 06:17:33.467"></status>
+</kw>
+<kw name="Emd Clear Text and Enter Data Based on Position" library="coreKeywords">
+<doc>Based on Position it will clear data and enter new data</doc>
+<arguments>
+<arg>${Position Y}</arg>
+<arg>${yOffset}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${inputTextFieldImage}</arg>
+<arg>${direction}</arg>
+<arg>${repeats}</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:33.707" level="INFO">Params: [PositionY.png, right, 1]
+[log] Get extended region from image result: [I@f925361</msg>
+<msg timestamp="20210127 06:17:33.707" level="INFO">${RequiredPosition} = [1820, 652, 26, 21]</msg>
+<status status="PASS" starttime="20210127 06:17:33.468" endtime="20210127 06:17:33.707"></status>
+</kw>
+<kw name="Double Click On Region" library="SikuliLibrary">
+<doc>Double Click On Region
+ there's no offset to be configured
+ works with the keyword Get Extended Region From</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:34.242" level="INFO">Params: [[Ljava.lang.Object;@6a118891]
+[log] DOUBLE CLICK on L[1833,662]@S(0) (534 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:33.707" endtime="20210127 06:17:34.242"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>BACKSPACE</arg>
+</arguments>
+<msg timestamp="20210127 06:17:34.285" level="INFO">Params: [BACKSPACE]
+[log]  TYPE "#BACK."</msg>
+<status status="PASS" starttime="20210127 06:17:34.242" endtime="20210127 06:17:34.285"></status>
+</kw>
+<kw name="Type With Modifiers" library="SikuliLibrary">
+<doc>Type with modifiers</doc>
+<arguments>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:34.851" level="INFO">Params: [492]
+Input Text:
+492
+[log]  TYPE "492"</msg>
+<status status="PASS" starttime="20210127 06:17:34.285" endtime="20210127 06:17:34.851"></status>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<arguments>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20210127 06:17:34.873" level="INFO">Params: [ENTER]
+[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20210127 06:17:34.851" endtime="20210127 06:17:34.874"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:33.468" endtime="20210127 06:17:34.874"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:39.881" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210127 06:17:34.874" endtime="20210127 06:17:39.881"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:29.447" endtime="20210127 06:17:39.881"></status>
+</kw>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${All Channels}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:40.100" level="INFO">Params: [AllChannels.png, 15]</msg>
+<msg timestamp="20210127 06:17:40.100" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746260099.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:39.881" endtime="20210127 06:17:40.100"></status>
+</kw>
+<msg timestamp="20210127 06:17:40.100" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:39.881" endtime="20210127 06:17:40.100"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:41.058" level="INFO">Params: [AllChannels.png]</msg>
+<msg timestamp="20210127 06:17:41.058" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746260333.png'/&gt;
+[log] CLICK on L[1836,858]@S(0) (520 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:40.100" endtime="20210127 06:17:41.058"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:40.100" endtime="20210127 06:17:41.058"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:39.881" endtime="20210127 06:17:41.059"></status>
+</kw>
+<kw name="Connect From One Widget To Another Widget" library="Keywords">
+<doc>By using this keyword we can establish connection from one widget to another Widget.</doc>
+<arguments>
+<arg>${Audio Bar Highlight}</arg>
+<arg>${Audio Bar Link Button}</arg>
+<arg>${4:3 Widget Input1}</arg>
+</arguments>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${SelectedWidget}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:41.453" level="INFO">Params: [AudioBarHighlight.png, 15]</msg>
+<msg timestamp="20210127 06:17:41.453" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746261453.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:41.060" endtime="20210127 06:17:41.453"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${SelectedWidget}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:43.550" level="INFO">Params: [AudioBarHighlight.png]</msg>
+<msg timestamp="20210127 06:17:43.550" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746262643.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:41.453" endtime="20210127 06:17:43.551"></status>
+</kw>
+<kw name="Mouse Move" library="SikuliLibrary">
+<doc>Mouse moveMove the mouse pointer to the target</doc>
+<arguments>
+<arg>${FromLocationImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:44.488" level="INFO">Params: [AudioBarLinkButton.png]</msg>
+<msg timestamp="20210127 06:17:44.488" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746263930.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:43.551" endtime="20210127 06:17:44.489"></status>
+</kw>
+<kw name="Mouse Down" library="SikuliLibrary">
+<doc>Mouse down
+ Press and hold the specified buttons</doc>
+<arguments>
+<arg>${MouseOption}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:44.502" level="INFO">Params: [RIGHT]</msg>
+<status status="PASS" starttime="20210127 06:17:44.489" endtime="20210127 06:17:44.503"></status>
+</kw>
+<kw name="Drag And Drop" library="SikuliLibrary">
+<doc>Drag the source image to target image.
+If source image is empty, drag the last match and drop at given target</doc>
+<arguments>
+<arg>${FromLocationImage}</arg>
+<arg>${TargetImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:46.938" level="INFO">Params: [AudioBarLinkButton.png, 43WidgetInput1.png]</msg>
+<msg timestamp="20210127 06:17:46.938" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746264790.png'/&gt;</msg>
+<msg timestamp="20210127 06:17:46.938" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746265055.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:44.503" endtime="20210127 06:17:46.938"></status>
+</kw>
+<kw name="Mouse Up" library="SikuliLibrary">
+<doc>Mouse up
+ Release the specified mouse buttons</doc>
+<arguments>
+<arg>${MouseOption}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:46.950" level="INFO">Params: [RIGHT]</msg>
+<status status="PASS" starttime="20210127 06:17:46.938" endtime="20210127 06:17:46.951"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:51.961" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210127 06:17:46.951" endtime="20210127 06:17:51.961"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:41.059" endtime="20210127 06:17:51.961"></status>
+</kw>
+<kw name="Select ShowMeter Checkbox" library="Keywords">
+<doc>Enables user to scroll down enable show meter functionality.</doc>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${AudioBar}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:52.195" level="INFO">Params: [AudioBar.png, 15]</msg>
+<msg timestamp="20210127 06:17:52.195" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746272195.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:51.961" endtime="20210127 06:17:52.195"></status>
+</kw>
+<msg timestamp="20210127 06:17:52.195" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:17:51.961" endtime="20210127 06:17:52.195"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:53.205" level="INFO">Params: [AudioBar.png]</msg>
+<msg timestamp="20210127 06:17:53.205" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746272460.png'/&gt;
+[log] CLICK on L[722,634]@S(0) (508 msec)</msg>
+<status status="PASS" starttime="20210127 06:17:52.195" endtime="20210127 06:17:53.205"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:52.195" endtime="20210127 06:17:53.205"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:51.961" endtime="20210127 06:17:53.206"></status>
+</kw>
+<kw name="Wheel Down" library="SikuliLibrary">
+<doc>Wheel down
+ Move mouse to the target, and wheel down with give steps</doc>
+<arguments>
+<arg>4</arg>
+<arg>${ScrollBar}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:55.322" level="INFO">Params: [4, ScrollBar.png]</msg>
+<msg timestamp="20210127 06:17:55.322" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746273882.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:53.206" endtime="20210127 06:17:55.323"></status>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${ShowMeterText}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:17:56.264" level="INFO">Params: [ShowMeterText.png, 15]</msg>
+<msg timestamp="20210127 06:17:56.264" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746276263.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:55.323" endtime="20210127 06:17:56.264"></status>
+</kw>
+<kw name="Get Extended Region From Image" library="SikuliLibrary">
+<doc>Get Extended Region From Image
+ Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width
+ The height and width can change using the multiplier @number_of_times_to_repeat 
+ If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored 
+ Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   |
+ |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</doc>
+<arguments>
+<arg>${ShowMeterText}</arg>
+<arg>right</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${RequiredPosition}</var>
+</assign>
+<msg timestamp="20210127 06:17:56.544" level="INFO">Params: [ShowMeterText.png, right, 1]
+[log] Get extended region from image result: [I@7faeb9a7</msg>
+<msg timestamp="20210127 06:17:56.544" level="INFO">${RequiredPosition} = [1648, 911, 119, 30]</msg>
+<status status="PASS" starttime="20210127 06:17:56.264" endtime="20210127 06:17:56.544"></status>
+</kw>
+<kw name="Click Region" library="SikuliLibrary">
+<doc>Click region</doc>
+<arguments>
+<arg>${RequiredPosition}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:01.143" level="INFO">Params: [[Ljava.lang.Object;@7a3f67bd]</msg>
+<msg timestamp="20210127 06:18:01.143" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746276559.png'/&gt;
+[log] CLICK on L[1707,926]@S(0) (1264 msec)</msg>
+<msg timestamp="20210127 06:18:01.143" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746281143.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:17:56.544" endtime="20210127 06:18:01.143"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:17:51.961" endtime="20210127 06:18:01.143"></status>
+</kw>
+<kw name="Get Capture From VIP Device Using FTP" library="coreKeywords">
+<arguments>
+<arg>${DisplayOutput}</arg>
+<arg>${DeviceIP}</arg>
+<arg>${ftpPort}</arg>
+</arguments>
+<kw name="Run Process" library="Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>${ftpBatchFIle}</arg>
+<arg>${outputNumber}</arg>
+<arg>${deviceIp}</arg>
+<arg>${ftpPort}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:01.143" level="INFO">Starting process:
+E:\EMDmachine251\ftpconnection.bat 4 172.17.174.12 2121</msg>
+<msg timestamp="20210127 06:18:01.143" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210127 06:18:01.175" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210127 06:18:01.143" endtime="20210127 06:18:01.175"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.183" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210127 06:18:01.175" endtime="20210127 06:18:06.183"></status>
+</kw>
+<kw name="Ftp Connect" library="FtpLibrary">
+<doc>Constructs FTP object, opens a connection and login. TLS support is optional.
+Call this function before any other (otherwise raises exception).
+Returns server output.
+Parameters:
+    - host - server host address
+    - user(optional) - FTP user name. If not given, 'anonymous' is used.
+    - password(optional) - FTP password. If not given, 'anonymous@' is used.
+    - port(optional) - TCP port. By default 21.
+    - timeout(optional) - timeout in seconds. By default 30.
+    - connId(optional) - connection identifier. By default equals 'default'
+    - tls(optional) - TLS connections flag. By default False
+    - mode(optional) - set the transfer mode to 'active' or 'passive'. By default 'passive'</doc>
+<arguments>
+<arg>${deviceIp}</arg>
+<arg>-</arg>
+<arg>-</arg>
+<arg>${ftpPort}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.183" level="INFO">220-Evertz FTP Server.
+   Copyright 2001 Evertz Microsystems Ltd.  All rights reserved.
+   hello world.
+220 Type QUOTE HELP for information.230 User logged in, proceed.</msg>
+<status status="PASS" starttime="20210127 06:18:06.183" endtime="20210127 06:18:06.183"></status>
+</kw>
+<kw name="Download File" library="FtpLibrary">
+<doc>Downloads file from current directory on FTP server in binary mode. If
+localFilePath is not given, file is saved in current local directory (by
+default folder containing robot framework project file) with the same name
+as source file. Returns server output
+Parameters:
+- remoteFileName - file name on FTP server
+- localFilePath (optional) - local file name or path where remote file should be saved.
+- connId(optional) - connection identifier. By default equals 'default'
+localFilePath variable can have following meanings:
+1. file name (will be saved in current default directory);
+2. full path (dir + file name)
+3. dir path (original file name will be added)
+Examples:
+| download file | a.txt |  |  |
+| download file | a.txt | b.txt | connId=ftp1 |
+| download file | a.txt | D:/rfftppy/tmp |  |
+| download file | a.txt | D:/rfftppy/tmp/b.txt |  |
+| download file | a.txt | D:\rfftppy\tmp\c.txt |  |</doc>
+<arguments>
+<arg>cap_000.bmp</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.729" level="INFO">226 Transfer complete.</msg>
+<status status="PASS" starttime="20210127 06:18:06.183" endtime="20210127 06:18:06.729"></status>
+</kw>
+<kw name="Ftp Close" library="FtpLibrary">
+<doc>Closes FTP connection. Returns None.
+Parameters:
+- connId(optional) - connection identifier. By default equals 'default'</doc>
+<status status="PASS" starttime="20210127 06:18:06.729" endtime="20210127 06:18:06.729"></status>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<doc>Moves the source file into the destination.</doc>
+<arguments>
+<arg>cap_000.bmp</arg>
+<arg>${ImageLocationPath}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.745" level="INFO" html="yes">Moved file from '&lt;a href="file://E:\EMDmachine251\cap_000.bmp"&gt;E:\EMDmachine251\cap_000.bmp&lt;/a&gt;' to '&lt;a href="file://E:\EMDmachine251\Images\cap_000.bmp"&gt;E:\EMDmachine251\Images\cap_000.bmp&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20210127 06:18:06.729" endtime="20210127 06:18:06.745"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:01.143" endtime="20210127 06:18:06.745"></status>
+</kw>
+<kw name="Verify Whether Output is same as Expected" library="Keywords">
+<arguments>
+<arg>${Show Meter Verification}</arg>
+<arg>${Expected Output}</arg>
+</arguments>
+<kw name="Compare Image" library="UserdefinedLibraries">
+<arguments>
+<arg>${actualImage}</arg>
+<arg>${expectedImage}</arg>
+<arg>${ImageLocationPath}</arg>
+</arguments>
+<assign>
+<var>${Status}</var>
+</assign>
+<msg timestamp="20210127 06:18:06.791" level="INFO">(460, 114, 1360, 786)
+images are different</msg>
+<msg timestamp="20210127 06:18:06.791" level="INFO">${Status} = False</msg>
+<status status="PASS" starttime="20210127 06:18:06.745" endtime="20210127 06:18:06.791"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${Status}" == "True"</arg>
+<arg>Pass Step</arg>
+<arg>${PassMessge}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${Status}" == "False"</arg>
+<arg>Fail Step</arg>
+<arg>${FailedMessge}</arg>
+</arguments>
+<kw name="Fail Step" library="coreKeywords">
+<doc>Allow user to trigger a Fail method</doc>
+<arguments>
+<arg>${FailedMessge}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+</arguments>
+<assign>
+<var>${Status}</var>
+</assign>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.791" level="INFO">TC02: Audio Bar-Show Meter Displaying on the Output --&gt; TC02: Audio Bar-Show Meter Displaying on the Output Failed</msg>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<msg timestamp="20210127 06:18:06.791" level="INFO">${Status} = ('PASS', None)</msg>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${Status}[0]"== "FAIL"</arg>
+<arg>Log</arg>
+<arg>${Step}</arg>
+<arg>level=ERROR</arg>
+<arg>console=True</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+<arg>level=ERROR</arg>
+<arg>console=True</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+<arg>level=ERROR</arg>
+<arg>console=True</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.791" level="ERROR">TC02: Audio Bar-Show Meter Displaying on the Output --&gt; TC02: Audio Bar-Show Meter Displaying on the Output Failed</msg>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${Status}[0]"== "FAIL"</arg>
+<arg>Fail</arg>
+<arg>${Step}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${TEST NAME} --&gt; ${Step}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:06.791" level="FAIL">TC02: Audio Bar-Show Meter Displaying on the Output --&gt; TC02: Audio Bar-Show Meter Displaying on the Output Failed</msg>
+<status status="FAIL" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<status status="FAIL" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<status status="FAIL" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<status status="FAIL" starttime="20210127 06:18:06.791" endtime="20210127 06:18:06.791"></status>
+</kw>
+<status status="FAIL" starttime="20210127 06:18:06.745" endtime="20210127 06:18:06.791"></status>
+</kw>
+<kw name="Go To Back" library="Keywords" type="teardown">
+<doc>it allows user to perform Back from Display window to Home</doc>
+<kw name="Emd Click" library="coreKeywords">
+<doc>It Waits for element within the given time limit, then it clicks.</doc>
+<arguments>
+<arg>${Back Button}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${clickableStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:07.493" level="INFO">Params: [BackButton.png, 15]</msg>
+<msg timestamp="20210127 06:18:07.493" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746287493.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:07.493"></status>
+</kw>
+<msg timestamp="20210127 06:18:07.493" level="INFO">${clickableStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:07.493"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${clickableStatus}</arg>
+<arg>Click</arg>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${clickableButtonImage}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:08.921" level="INFO">Params: [BackButton.png]</msg>
+<msg timestamp="20210127 06:18:08.921" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746288117.png'/&gt;
+[log] CLICK on L[20,43]@S(0) (600 msec)</msg>
+<status status="PASS" starttime="20210127 06:18:07.493" endtime="20210127 06:18:08.921"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:07.493" endtime="20210127 06:18:08.921"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:08.922"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Previous Added Device}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<assign>
+<var>${BackToHomeStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Previous Added Device}</arg>
+<arg>${MAXTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:09.889" level="INFO">Params: [PreviousAddedDevice.png, 15]</msg>
+<msg timestamp="20210127 06:18:09.889" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746289888.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:18:08.923" endtime="20210127 06:18:09.889"></status>
+</kw>
+<msg timestamp="20210127 06:18:09.889" level="INFO">${BackToHomeStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:18:08.922" endtime="20210127 06:18:09.889"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:06.791" endtime="20210127 06:18:09.904"></status>
+</kw>
+<doc>Test Audio Bar-Show Meter functionality
+Steps:
+Add Device
+Go to Multiviewer Display1
+Go to widgets section.
+Drag and drop 4:3 widget
+Add source to it (Go to Sources section,Drag and drop Input-1)
+Go to widgets section.
+Drag and Drop audio bar widget on display
+Expand width and height of audio bar widget
+Enable all channels
+Connect audio bar to 4:3 widget
+Scroll down till show meter under window properties
+Enable show meter</doc>
+<tags>
+<tag>Audiobar</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20210127 06:16:45.154" endtime="20210127 06:18:09.904" critical="yes">TC02: Audio Bar-Show Meter Displaying on the Output --&gt; TC02: Audio Bar-Show Meter Displaying on the Output Failed</status>
+</test>
+<status status="FAIL" starttime="20210127 06:16:45.139" endtime="20210127 06:18:09.904"></status>
+</suite>
+<kw name="Close Evertz Offline Application" library="Keywords" type="teardown">
+<doc>close the application</doc>
+<kw name="Close Application" library="SikuliLibrary">
+<doc>Close application</doc>
+<arguments>
+<arg>${ApplicationTittle}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:15.229" level="INFO">Params: [Evertz Multiviewer Designer]</msg>
+<status status="PASS" starttime="20210127 06:18:09.904" endtime="20210127 06:18:15.229"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Screen Contain</arg>
+<arg>${Quit Confirm PopuP}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<assign>
+<var>${PopUpStatus}</var>
+</assign>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<arguments>
+<arg>${Quit Confirm PopuP}</arg>
+<arg>${MINTIME}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:15.467" level="INFO">Params: [QuitConfirmPopUp.png, 5]</msg>
+<msg timestamp="20210127 06:18:15.467" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746295461.png'/&gt;</msg>
+<status status="PASS" starttime="20210127 06:18:15.230" endtime="20210127 06:18:15.467"></status>
+</kw>
+<msg timestamp="20210127 06:18:15.468" level="INFO">${PopUpStatus} = True</msg>
+<status status="PASS" starttime="20210127 06:18:15.229" endtime="20210127 06:18:15.468"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${PopUpStatus}</arg>
+<arg>Click</arg>
+<arg>${Yes Button}</arg>
+</arguments>
+<kw name="Click" library="SikuliLibrary">
+<doc>Click</doc>
+<arguments>
+<arg>${Yes Button}</arg>
+</arguments>
+<msg timestamp="20210127 06:18:16.571" level="INFO">Params: [YesButton.png]</msg>
+<msg timestamp="20210127 06:18:16.571" level="INFO" html="yes">&lt;img src='sikuli_captured/sikuliximage-1611746295772.png'/&gt;
+[log] CLICK on L[1019,531]@S(0) (520 msec)</msg>
+<status status="PASS" starttime="20210127 06:18:15.468" endtime="20210127 06:18:16.572"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:15.468" endtime="20210127 06:18:16.572"></status>
+</kw>
+<kw name="Stop Remote Server" library="SikuliLibrary">
+<doc>Stops the remote server.</doc>
+<msg timestamp="20210127 06:18:16.576" level="INFO">Robot Framework remote server stopping</msg>
+<status status="PASS" starttime="20210127 06:18:16.572" endtime="20210127 06:18:16.577"></status>
+</kw>
+<status status="PASS" starttime="20210127 06:18:09.904" endtime="20210127 06:18:16.577"></status>
+</kw>
+<status status="FAIL" starttime="20210127 06:16:28.261" endtime="20210127 06:18:16.578"></status>
+</suite>
+<status status="FAIL" starttime="20210127 06:16:28.230" endtime="20210127 06:18:16.581"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Audiobar</stat>
+<stat pass="0" fail="1">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="EMDmachine251">EMDmachine251</stat>
+<stat pass="0" fail="1" id="s1-s1" name="TestCases">EMDmachine251.TestCases</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Poc Demo">EMDmachine251.TestCases.Poc Demo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210127 06:18:06.791" level="ERROR">TC02: Audio Bar-Show Meter Displaying on the Output --&gt; TC02: Audio Bar-Show Meter Displaying on the Output Failed</msg>
+</errors>
+</robot>

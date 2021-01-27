@@ -1,0 +1,6 @@
+open 172.17.174.12 2121 
+/r 
+/r 
+del cap_000.bmp 
+quote site capture_4 single 
+bye 
